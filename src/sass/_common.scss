@@ -1,1 +1,86 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+$primaryColor: #11998e;
+$secondaryColor: #38ef7d;
+
+.wrapper {
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button {
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: color 0.5s, background-position 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px $primaryColor;
+  background-image: linear-gradient(
+    45deg,
+    $primaryColor 0%,
+    #02c7a6 51%,
+    $secondaryColor 100%
+  );
+  cursor: pointer;
+
+  &:hover {
+    background-position: right center;
+    color: white;
+    text-decoration: none;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+input {
+  width: 500px;
+  max-width: 100%;
+  margin-right: 30px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  outline: 0;
+  padding: 7px 0;
+  font-weight: 700;
+  font-size: 20px;
+  background: transparent;
+  transition: border-color 0.2s;
+  border-image: linear-gradient(to right, $primaryColor, $secondaryColor);
+  border-image-slice: 1;
+
+  &::placeholder {
+    color: grey;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  .photo-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+      rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+    .info {
+      padding: 0 10px;
+    }
+  }
+}
